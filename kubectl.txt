@@ -112,3 +112,13 @@ kubectl delete pod simple-67f8975bf4-8dnxs
 kubectl get pods
 kubectl cluster-info
 kubectl delete all --all
+
+#declarative approach
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+
+kubectl delete -f .\deployment.yaml -f .\service.yaml
+
+
+kubectl get nodes
+kubectl describe node
