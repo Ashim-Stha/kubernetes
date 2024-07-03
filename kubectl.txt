@@ -1,0 +1,114 @@
+kubectl cluster-info
+kubectl config current-context
+kubectl config get-contexts
+kubectl config use-context context_name
+
+kubectx
+
+#imperative 
+kubectl create deployment mynginx1 --image=nginx
+
+#declarative
+kubectl create -f deploy-example.yaml
+
+#cleanup
+kubectl delete deployment mynginx1
+kubectl delete deploy mynginx2
+
+#namespace
+kubectl get ns
+
+#pods
+kubectl get pods
+kubectl get pods --namespace=kube-system
+
+
+kubectl create deployment mynginx1 --image=nginx
+kubectl create -f deploy-example.yaml
+kubectl create -f deploy-example.yaml
+kubectl get deploy
+kubectl delete deployment mynginx1
+kubectl get ns
+kubectl get pods
+kubectl get pods --namespace=kube-system
+kubectl create ns hello
+kubectl get ns
+kubectl delete ns hello
+kubectl version --client
+kubectl cluster-info
+kubectl get nodes
+kubectl run nginx --image=nginx
+kubectl get pods
+kubectl describe pod nginx
+kubectl get pods -o wide
+kubectl get pods -o wide
+kubectl delete pod nginx
+kubectl get pods
+kubectl create deployment nginx --image=nginx
+kubectl get deployments
+kubectl get pods
+kubectl describe deployment nginx
+kubectl get pods
+kubectl get deployments
+kubectl scale nginx --replicas=5
+kubectl scale deployment nginx --replicas=5
+kubectl get pods
+
+kubectl scale deployment nginx --replicas=3
+kubectl get pods
+kubectl get pods -o wide
+kubectl get deploy
+kubectl expose deployment nginx --port=8080 --target-port=80
+kubectl get services
+kubectl get services
+kubectl describe service nginx
+kubectl delete deployment nginx
+kubectl delete service nginx
+kubectl get deploy
+kubectl get services
+
+docker build . -t simple
+docker images
+docker push ashimshrestha/simple
+docker tag simple ashimshrestha/simple
+docker push simple
+kubectl create deployment simple --image=ashimshrestha/simple
+kubectl get pods
+kubectl get services
+kubectl expose deployment simple --port=3000
+
+docker login
+docker build . -t simple
+docker images
+docker push ashimshrestha/simple
+docker tag simple ashimshrestha/simple
+docker push simple
+kubectl get pods
+kubectl get services
+kubectl create deployment simple --image=ashimshrestha/simple
+kubectl delete deployment simple
+kubectl expose deployment simple --port=3000
+kubectl exec -it simple-67f8975bf4-q8264 sh
+kubectl run -it --rm debug-pod --image=radial/busyboxplus:curl -- sh
+kubectl scale deployment simple --replicas=4
+kubectl get deploy
+kubectl get pods -o wide
+kubectl get services
+kubectl delete service simple
+kubectl expose deployment simple --type=NodePort --port=3000
+kubectl expose deployment simple --type=LoadBalancer --port=3000
+kubectl run -it --rm debug-pod --image=radial/busyboxplus:curl -- sh
+curl 10.107.145.214:3000
+
+docker build . -t ashimshrestha/simple:2.0.0
+docker push ashimshrestha/simple:2.0.0
+kubectl get deploy
+kubectl set image deployment simple simple=ashimshrestha/simple:2.0.0
+kubectl rollout status deploy simple
+kubectl get pods
+kubectl get services
+kubectl port-forward svc/simple 3000:3000
+kubectl delete pod simple-67f8975bf4-8dnxs
+kubectl get pods
+kubectl cluster-info
+kubectl delete all --all
