@@ -119,6 +119,8 @@ kubectl apply -f service.yaml
 
 kubectl delete -f .\deployment.yaml -f .\service.yaml
 
+kubectl exec web-to-nginx-fbfdd69b7-smtpf -- nslookup nginx 
+kubectl exec web-to-nginx-fbfdd69b7-smtpf -- wget -qO- http://nginx
 
 kubectl get nodes
 kubectl describe node
